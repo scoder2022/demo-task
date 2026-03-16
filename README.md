@@ -76,3 +76,17 @@ GET `/api/notifications/summary`
 * `/api/admin/notifications/stats` (GET)
 * `/api/admin/notifications/bulk-retry` (POST)
 * `/api/admin/notifications/bulk-cancel` (POST)
+
+## Design Decisions
+
+* Service layer keeps logic out of controllers
+* Repository pattern for database access
+* DTOs for structured data
+* Queue jobs for background notifications
+* Rate limit of 10 per user per hour
+
+## Assumptions
+
+* Users have unique IDs
+* Redis is installed for queues and caching
+* Emails/webhooks logged locally
