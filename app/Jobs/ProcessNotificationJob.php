@@ -42,7 +42,7 @@ class ProcessNotificationJob implements ShouldQueue
             Log::info("Sending notification to user: {$this->notification->user_id}");
 
             // check case for failed jobs works or not uncomment to make job failed
-            if (rand(1,3) === 1) throw new \Exception("Simulated failure");
+            // if (rand(1,3) === 1) throw new \Exception("Simulated failure");
 
             $repository->markAsProcessed($this->notification);
 
